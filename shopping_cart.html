@@ -1,101 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        
-  <title>Shopping Cart</title>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    h1 {
-      text-align: center;
-    }
-    #cart-items {
-      list-style-type: none;
-      padding: 0;
-    }
-    #cart-items li {
-      margin: 10px 0;
-    }
-    .empty-cart {
-      background-color: #ff4d4d;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-      border-radius: 5px;
-    }
-    .icon {
-      width: 32px;
-      height: 32px;
-      display: inline-block;
-      vertical-align: middle;
-    }
-  </style>
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+        #cart-items li {
+            margin: 10px 0;
+        }
+        .empty-cart {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .icon {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
 </head>
+<body class="bg-black text-white">
   <!-- Header -->
-  <header class="bg-black shadow flex justify-between items-center py-4 px-4" style="padding: 0;">
+  <header class="bg-black shadow flex justify-between items-center py-4 px-4">
     <a href="index.html">
       <h1><img src="https://enstack-cdn.s3.amazonaws.com/user_362330/shop_image_Mpahrce.png?AWSAccessKeyId=AKIA3QPKBPVOGUKBJAEH&Signature=Qy%2B7%2FKo17pX0aYuxGJe15c6P2Q4%3D&Expires=1731496216" alt="Icon" class="icon">
       RS Mods Manila</h1>
     </a>
-    <a href="#" class="text-xl hover:text-gray-300">
-      <i class="fas fa-shopping-cart" onclick="goToCart()"></i>
-      <span id="cart-counter" class="bg-red-500 text-white rounded-full px-2 py-1 ml-2">0</span>
-    </a>
-  </header>
-<body class="bg-black text-white">
-  <h1>Your Shopping Cart</h1>
-  <ul id="cart-items"></ul>
-  <button class="empty-cart" id="empty-cart-button">Empty Cart</button>
+        <a href="#" class="text-xl hover:text-gray-300">
+            <i class="fas fa-shopping-cart" onclick="goToCart()"></i>
+            <span id="cart-counter" class="bg-red-500 text-white rounded-full px-2 py-1 ml-2">0</span>
+        </a>
+    </header>
+    <h1>Your Shopping Cart <span id="total-price" class="total">Total: $0.00</span></h1>
+    <ul id="cart-items"></ul>
+    <button class="empty-cart" id="empty-cart-button">Empty Cart</button>
 
-  <script>
-    function updateCartDisplay() {
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      const cartItemsElement = document.getElementById('cart-items');
-      cartItemsElement.innerHTML = ""; // Clear any existing content
+    <script>
+        function updateCartDisplay() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartItemsElement = document.getElementById('cart-items');
+    cartItemsElement.innerHTML = ""; // Clear any existing content
+    const totalPriceElement = document.getElementById('total-price');
+    totalPriceElement.textContent = "Total: $0.00"; // Reset total price display
 
-      if (cartItems.length === 0) {
+    if (cartItems.length === 0) {
         cartItemsElement.innerHTML = '<li>Your cart is empty!</li>';
-      } else {
+    } else {
         cartItems.forEach(item => {
-          const li = document.createElement('li');
-          const itemDetails = `
-            ${item.name} (x${item.quantity}) - 
-            $${(item.quantity * item.price).toFixed(2)}
-          `;
-          li.textContent = itemDetails;
-          cartItemsElement.appendChild(li);
+            const li = document.createElement('li');
+            const itemDetails = `
+                ${item.name} (x${item.quantity}) - 
+                $${(item.quantity * item.price).toFixed(2)}
+            `;
+            li.textContent = itemDetails;
+            cartItemsElement.appendChild(li);
         });
 
         // Calculate and display total cart price
         let totalPrice = 0;
         cartItems.forEach(item => totalPrice += item.quantity * item.price);
-        const totalPriceElement = document.createElement('p');
-        totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
-        cartItemsElement.parentNode.insertBefore(totalPriceElement, cartItemsElement.nextSibling); // Insert after cart items
-      }
+        totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`; // Update total price display
     }
 
-    document.getElementById('empty-cart-button').addEventListener('click', () => {
-      const confirmation = confirm("Are you sure you want to remove all items from the cart?");
-      if (confirmation) {
-        localStorage.removeItem('cartItems'); // Clear items from local storage
-        updateCartDisplay(); // Refresh the cart display
-      }
-    });
+    // Update the cart counter based on the total quantity of items
+    updateCartCounter(); 
+}
+        document.getElementById('empty-cart-button').addEventListener('click', () => {
+            const confirmation = confirm("Are you sure you want to empty the cart?");
+            if (confirmation) {
+                localStorage.removeItem('cartItems');
+                updateCartDisplay();
+                updateCartCounter(); // Update the cart counter
+            }
+        });
 
-    // Initial call to display cart items
-    updateCartDisplay();
-  </script>
+        function updateCartCounter() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-counter').textContent = totalQuantity; // Update the cart counter
+}
+
+        // Initial call to display cart items and total price
+        updateCartDisplay();
+    </script>
+    <script src="cart-utils.js"></script>
 </body>
 </html>

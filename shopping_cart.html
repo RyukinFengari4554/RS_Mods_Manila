@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+    <ul id="cart-items"></ul>
+    <script>
+        // Get the shopping list items from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const items = urlParams.get('items');
+
+        // Parse the items string into an array
+        const itemsArray = items.split(',');
+
+        // Populate the shopping list
+        const cartItems = document.getElementById('cart-items');
+        itemsArray.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            cartItems.appendChild(li);
+        });
+    </script>
+</body>
+</html>

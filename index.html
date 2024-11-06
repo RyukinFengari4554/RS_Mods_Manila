@@ -225,6 +225,21 @@
   </footer>
   <script>
     let cartItemCount = 0;
+
+window.onload = () => {
+    const items = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const shoppingList = document.getElementById('shopping-list');
+
+    items.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        shoppingList.appendChild(listItem);
+        cartItemCount++;
+    });
+
+    const cartCounter = document.getElementById('cart-counter');
+    cartCounter.textContent = cartItemCount;
+};
     function addToCart(button) {
         const watchName = button.parentElement.querySelector('h3').textContent;
         const listItem = document.createElement('li');
@@ -234,6 +249,10 @@
         cartItemCount++;
         const cartCounter = document.getElementById('cart-counter');
         cartCounter.textContent = cartItemCount;
+        // Store items in Local Storage
+        const items = JSON.parse(localStorage.getItem('cartItems')) || [];
+            items.push(watchName);
+            localStorage.setItem('cartItems', JSON.stringify(items));
     }
     function goToCart() {
     const items = [];

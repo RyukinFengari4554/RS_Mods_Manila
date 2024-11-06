@@ -11,260 +11,200 @@
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
   
-  <style>
-   body {
+    <style>
+        body {
             font-family: 'Inter', sans-serif;
         }
-  .icon {
-    width: 32px; /* Adjust width and height as needed */
-    height: 32px;
-    display: inline-block;
-    vertical-align: middle; /* Vertically align with surrounding text */
-  }
-
-  </style>
- </head>
- <body class="bg-black text-white">
-  <!-- Header -->
-  <header class="bg-black shadow flex justify-between items-center py-4 px-4">
-    <a href="#">
-        <h1><img src="https://enstack-cdn.s3.amazonaws.com/user_362330/shop_image_Mpahrce.png?AWSAccessKeyId=AKIA3QPKBPVOGUKBJAEH&Signature=Qy%2B7%2FKo17pX0aYuxGJe15c6P2Q4%3D&Expires=1731496216" alt="Icon" class="icon">
-        RS Mods Manila  </h1>
-    </a>
-    <a href="#" class="text-xl hover:text-gray-300">
-        <i class="fas fa-shopping-cart" onclick="goToCart()"></i>
-        <span id="cart-counter" class="bg-red-500 text-white rounded-full px-2 py-1 ml-2">0</span>
-      </a>
-  </header>
-  <!-- Hero Section -->
-  <section class="bg-white text-black py-20">
-   <div class="container mx-auto px-4 text-center">
-    <h1 class="text-4xl font-bold mb-4">
-     Discover Our Exclusive Watch Collection
-    </h1>
-    <p class="text-lg mb-8">
-     Find the perfect watch that suits your style and personality.
-    </p>
-   </div>
-  </section>
-  <!-- Product Section -->
-  <section class="py-20">
-   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">
-     Our Watches
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Elegant silver watch with a black leather strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/8NsOjIK4TnaQHpe77DsS7dqcZpCwclpO3ewmLJJXfRuzefxdC.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Silver Elegance
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $199.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Classic gold watch with a brown leather strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/1abKWhZsjKbHKJ2RisWdq5Ss9QpeFpuKlEbhBQIVaKO0fPuTA.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Golden Classic
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $249.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Modern black watch with a metal strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/NnufxjqbIRyGV6LW5WFh5DnwVlPBNs3MC7v6Mw6ANEYwfPuTA.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Black Modern
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $179.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Sporty digital watch with a rubber strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/CfgzfnynutgPfJk5f3Yd2wOWf6JefvwqDAFBOzfKpAgIkff4OB.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Sporty Digital
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $129.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Luxury watch with a diamond-studded bezel" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/q10Ud6MeLb0aTS00Qr1v0X4ood7UC0Kabotwq8cZVaQxfPuTA.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Diamond Luxury
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $499.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Minimalist watch with a white dial and black strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/HRVRlHMdqOLJFJ2wtVszdbSnzWcdP96C7kynkt8OvKi5fH3JA.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Minimalist White
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $149.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Vintage watch with a brown leather strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/4ZTjuwMfWwXmf0X5MVdYxwuMPZP70W53gOyGQB96Bm5nff4OB.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Vintage Brown
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $199.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Elegant rose gold watch with a mesh strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/T1FF3UchXt7vEpy3QwfKeiCPpH2TvA1e1GQEfft7FKFe3fH3JA.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Rose Gold Elegance
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $229.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Casual watch with a blue dial and fabric strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/atgWDDT2yzLHANhafCe0cr9wLF50fws5GxXGlaMjleRz9fxdC.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Casual Blue
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $99.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Luxury watch with a gold metal strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/GMHYqhdGY2prHlGRy5DaYiD387JKG1nfuBB32tUQYPgxfPuTA.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Gold Luxury
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $399.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Smartwatch with a black rubber strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/5eRPHTv6bCy9dyX7KxvEefEpZyaX26gb6gQYNxRpw862efxdC.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Smartwatch Black
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $299.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-     <div class="bg-black p-6 rounded shadow">
-      <img alt="Elegant watch with a silver metal strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/CLX48zGhm2Y3Cx4LtS6lkGEMS1N4L4gP4bJikKfCFgedff4OB.jpg" width="600"/>
-      <h3 class="text-xl font-bold mb-2 text-white">
-       Silver Classic
-      </h3>
-      <p class="text-gray-400 mb-4">
-       $189.99
-      </p>
-      <a class="px-4 py-2 bg-white text-black rounded hover:bg-yellow-600" href="#" onclick="addToCart(this)">
-       Add to Cart
-      </a>
-     </div>
-    </div>
-   </div>
-  </section>
-  <section class="py-20">
-    <div class="container mx-auto px-4">
-        <h2>Shopping List</h2>
-        <ul id="shopping-list" class="list-disc">
-        </ul>
-    </div>
-</section>
-  <!-- Footer -->
-  <footer class="bg-black text-white py-8">
-   <div class="container mx-auto px-4">
-    <div class="flex justify-between items-center">
-     <a class="text-2xl font-bold" href="#">
-      RS Mods Manila
-     </a>
-    </div>
-    <div class="mt-4 text-center">
-     <p>
-      © 2023 RS Mods Manila. All rights reserved.
-     </p>
-    </div>
-   </div>
-  </footer>
-  <script>
-    let cartItemCount = 0;
-
-window.onload = () => {
-    const items = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const shoppingList = document.getElementById('shopping-list');
-
-    items.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        shoppingList.appendChild(listItem);
-        cartItemCount++;
-    });
-
-    const cartCounter = document.getElementById('cart-counter');
-    cartCounter.textContent = cartItemCount;
-};
-    function addToCart(button) {
-        const watchName = button.parentElement.querySelector('h3').textContent;
-        const listItem = document.createElement('li');
-        listItem.textContent = watchName;
-        const shoppingList = document.getElementById('shopping-list');
-        shoppingList.appendChild(listItem);
-        cartItemCount++;
-        const cartCounter = document.getElementById('cart-counter');
-        cartCounter.textContent = cartItemCount;
-        // Store items in Local Storage
-        const items = JSON.parse(localStorage.getItem('cartItems')) || [];
-            items.push(watchName);
-            localStorage.setItem('cartItems', JSON.stringify(items));
-    }
-    function goToCart() {
-    const items = [];
-    const shoppingList = document.getElementById('shopping-list');
-    const listItems = shoppingList.querySelectorAll('li');
-    listItems.forEach(item => {
-        items.push(item.textContent);
-    });
-
-    const url = `shopping_cart.html?items=${encodeURIComponent(items.join(','))}`;
-    window.location.href = url;
-}
-</script>
- </body>
+        .icon {
+            width: 32px; /* Adjust width and height as needed */
+            height: 32px;
+            display: inline-block;
+            vertical-align: middle; /* Vertically align with surrounding text */
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Header -->
+    <header class="bg-black shadow flex justify-between items-center py-4 px-4">
+        <a href="#">
+            <h1><img src="https://enstack-cdn.s3.amazonaws.com/user_362330/shop_image_Mpahrce.png?AWSAccessKeyId=AKIA3QPKBPVOGUKBJAEH&Signature=Qy%2B7%2FKo17pX0aYuxGJe15c6P2Q4%3D&Expires=1731496216" alt="Icon" class="icon">
+            RS Mods Manila</h1>
+        </a>
+        <a href="#" class="text-xl hover:text-gray-300">
+            <i class="fas fa-shopping-cart" onclick="goToCart()"></i>
+            <span id="cart-counter" class="bg-red-500 text-white rounded-full px-2 py-1 ml-2">0</span>
+        </a>
+    </header>
+    <!-- Hero Section -->
+    <section class="bg-white text-black py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">
+                Discover Our Exclusive Watch Collection
+            </h1>
+            <p class="text-lg mb-8">
+                Find the perfect watch that suits your style and personality.
+            </p>
+        </div>
+    </section>
+    <!-- Product Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">
+                Our Watches
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Silver%20Elegance&price=199.99">
+                        <img alt="Elegant silver watch with a black leather strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/8NsOjIK4TnaQHpe77DsS7dqcZpCwclpO3ewmLJJXfRuzefxdC.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Silver Elegance
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $199.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Golden%20Classic&price=249.99">
+                        <img alt="Classic gold watch with a brown leather strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/1abKWhZsjKbHKJ2RisWdq5Ss9QpeFpuKlEbhBQIVaKO0fPuTA.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Golden Classic
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $249.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Black%20Modern&price=179.99">
+                        <img alt="Modern black watch with a metal strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/NnufxjqbIRyGV6LW5WFh5DnwVlPBNs3MC7v6Mw6ANEYwfPuTA.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Black Modern
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $179.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Sporty%20Digital&price=129.99">
+                        <img alt="Sporty digital watch with a rubber strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/CfgzfnynutgPfJk5f3Yd2wOWf6JefvwqDAFBOzfKpAgIkff4OB.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Sporty Digital
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $129.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Diamond%20Luxury&price=499.99">
+                        <img alt="Luxury watch with a diamond-studded bezel" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/q10Ud6MeLb0aTS00Qr1v0X4ood7UC0Kabotwq8cZVaQxfPuTA.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Diamond Luxury
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $499.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Minimalist%20White&price=149.99">
+                        <img alt="Minimalist watch with a white dial and black strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/HRVRlHMdqOLJFJ2wtVszdbSnzWcdP96C7kynkt8OvKi5fH3JA.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Minimalist White
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $149.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Vintage%20Brown&price=199.99">
+                        <img alt="Vintage watch with a brown leather strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/4ZTjuwMfWwXmf0X5MVdYxwuMPZP70W53gOyGQB96Bm5nff4OB.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Vintage Brown
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $199.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Rose%20Gold%20Elegance&price=229.99">
+                        <img alt="Elegant rose gold watch with a mesh strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/T1FF3UchXt7vEpy3QwfKeiCPpH2TvA1e1GQEfft7FKFe3fH3JA.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb- 2 text-white">
+                        Rose Gold Elegance
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $229.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Casual%20Blue&price=99.99">
+                        <img alt="Casual watch with a blue dial and fabric strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/atgWDDT2yzLHANhafCe0cr9wLF50fws5GxXGlaMjleRz9fxdC.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Casual Blue
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $99.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Gold%20Luxury&price=399.99">
+                        <img alt="Luxury watch with a gold metal strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/GMHYqhdGY2prHlGRy5DaYiD387JKG1nfuBB32tUQYPgxfPuTA.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Gold Luxury
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $399.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Smartwatch%20Black&price=299.99">
+                        <img alt="Smartwatch with a black rubber strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/5eRPHTv6bCy9dyX7KxvEefEpZyaX26gb6gQYNxRpw862efxdC.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Smartwatch Black
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $299.99
+                    </p>
+                </div>
+                <div class="bg-black p-6 rounded shadow">
+                    <a href="watch_detail.html?name=Silver%20Classic&price=189.99">
+                        <img alt="Elegant watch with a silver metal strap" class="w-full h-48 object-cover mb-4" height="400" src="https://storage.googleapis.com/a1aa/image/CLX48zGhm2Y3Cx4LtS6lkGEMS1N4L4gP4bJikKfCFgedff4OB.jpg" width="600"/>
+                    </a>
+                    <h3 class="text-xl font-bold mb-2 text-white">
+                        Silver Classic
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        $189.99
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <a class="text-2xl font-bold" href="#">
+                    RS Mods Manila
+                </a>
+            </div>
+            <div class="mt-4 text-center">
+                <p>
+                    © 2023 RS Mods Manila. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
